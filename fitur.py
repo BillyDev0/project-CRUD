@@ -20,7 +20,7 @@ def create(data_csv):
         import os
 
         data_baru = pd.DataFrame([{
-            'id': len(data_csv['id']+2),
+            'id': data_csv['id'].max() + 1,
             'nama': nama,
             'umur': umur,
             'departemen': departemen,

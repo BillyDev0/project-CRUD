@@ -40,4 +40,3 @@ def create(data_csv):
     except Exception as e:
         print(f' Terjadi error: {e}')
 
-

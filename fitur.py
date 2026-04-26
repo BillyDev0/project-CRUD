@@ -41,13 +41,16 @@ def create(data_csv):
     except Exception as e:
         print(f' Terjadi error: {e}')
 
+
 def read(data_csv):
-    nama=input('Nama: ')
-    if nama in data_csv.values:
-        hasil=data_csv[data_csv['nama']==nama]
+    id=int(input('id: '))
+    hasil=data_csv[data_csv['id'] == id]
+
+    if not hasil.empty:
         print(hasil)
     else:
         print('Data tidak ditemukan')
+
 
 def delete(data_csv):
     id=int(input('id: '))

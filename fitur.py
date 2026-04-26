@@ -40,3 +40,10 @@ def create(data_csv):
     except Exception as e:
         print(f' Terjadi error: {e}')
 
+def read(data_csv):
+    nama=input('Nama: ')
+    hasil=data_csv[data_csv['nama']==nama]
+    if nama in data_csv.values:
+        print(hasil)
+    else:
+        print('Data tidak ditemukan')

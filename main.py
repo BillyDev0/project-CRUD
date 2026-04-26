@@ -1,4 +1,4 @@
-from fitur import create
+from fitur import create,read
 import pandas as pd
 
 def main():
@@ -14,4 +14,7 @@ def main():
         pilih= input('Pilih: ')
         if pilih=='1':
             create(data_csv)
+
+        elif pilih=='2':
+            read(data_csv)
 main()

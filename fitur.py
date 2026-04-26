@@ -48,3 +48,15 @@ def read(data_csv):
         print(hasil)
     else:
         print('Data tidak ditemukan')
+
+def delete(data_csv):
+    id=int(input('id: '))
+    hasil=data_csv[data_csv['id'] == id]
+    
+    if not hasil.empty: 
+        hapus_data=data_csv[data_csv['id'] != id]
+        hapus_data.to_csv('data.csv',index=False)
+        print('Data berhasil dihapus')     
+    
+    else:
+        print('Data tidak ditemukan')

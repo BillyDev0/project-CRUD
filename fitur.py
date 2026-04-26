@@ -1,3 +1,7 @@
+import pandas as pd
+import os
+
+
 def create(data_csv):
     try:
         nama = input('Nama: ')
@@ -15,10 +19,7 @@ def create(data_csv):
         except ValueError:
             print(' Gaji harus angka')
             return
-
-        import pandas as pd
-        import os
-
+        
         data_baru = pd.DataFrame([{
             'id': data_csv['id'].max() + 1,
             'nama': nama,
@@ -42,8 +43,8 @@ def create(data_csv):
 
 def read(data_csv):
     nama=input('Nama: ')
-    hasil=data_csv[data_csv['nama']==nama]
     if nama in data_csv.values:
+        hasil=data_csv[data_csv['nama']==nama]
         print(hasil)
     else:
         print('Data tidak ditemukan')
